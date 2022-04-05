@@ -18,12 +18,15 @@ const H2 = styled.h2 `
     font-family: 'Merienda', sans-serif;
     margin: 0 auto;
     font-size: 24px;
+    font-weight: 400;
 `
 const Describe = styled.div `
     display: flex;
     flex-direction: column;
     font-family: 'Merienda', sans-serif;
+    font-weight: 400;
     font-size: 14px;
+    width: 350px;
 `
 
 const Beans = styled.img `
@@ -34,6 +37,7 @@ const Beans = styled.img `
 const LineImg = styled.div `
     display: flex;
     justify-content: center;
+    margin: 20px 0 0 0; 
 `
 
 const LineAfter = styled.div `
@@ -52,6 +56,10 @@ const LineAfterAll = styled.div `
     border-bottom: 1px solid black;
 `
 
+const Text = styled.p `
+    text-align: center;
+`
+
 const DescribeBlock = () => {
     return (
         <div>
@@ -64,14 +72,16 @@ const DescribeBlock = () => {
                         <Beans src={beans} alt='Coffe Beans'/>
                         <LineAfter/>
                     </LineImg>
-                    <p>
+                    <Text>
                     Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
+                    </Text>
+                    <Text>
                     Afraid at highly months do things on at. Situation recommend objection do intention
-                    so questions. 
+                    so questions.<br/>
                     As greatly removed calling pleased improve an. Last ask him cold feel
                     met spot shy want. Children me laughing we prospect answered followed. At it went
                     is song that held help face.
-                    </p>
+                    </Text>
                 </Describe>
             </Div>
             <LineAfterAll/>

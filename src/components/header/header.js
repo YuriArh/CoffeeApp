@@ -14,6 +14,7 @@ const H1 = styled.h1 `
     text-align: center;
     margin-top: 70px;
     font-size: 40px;
+    font-weight: 700;
 `
 const A = styled.a `
     text-decoration: none;
@@ -25,6 +26,7 @@ const A = styled.a `
 const Nav = styled.nav `
     padding-top: 30px;
     padding-left: 150px;
+    font-weight: 400;
 `
 
 const Header = () => {
