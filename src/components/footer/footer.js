@@ -7,15 +7,21 @@ const Nav = styled.nav `
     font-weight: 400;
 `
 const FooterDiv = styled.footer `
+    width: 355px;
+    height: 40px;
+    font-family: 'Merienda', sans-serif;
+    font-weight: 400;
     
     margin: 0 auto;
-    text-align: center;
 `
 const A = styled.a `
     text-decoration: none;
     color: #000000;
     font-size: 12px;
     margin-right: 40px;
+    &:last-child {
+        margin-right: 0px;
+    }
 `
 const LineImg = styled.div `
     display: flex;
