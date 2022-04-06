@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import beans from '../../assets/image/coffee-beans.svg'
 import img from '../../assets/image/coffee-shop.png';
 
+
 const StyledHeader = styled.header `
     font-family: 'Merienda', sans-serif;
     

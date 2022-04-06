@@ -6,7 +6,7 @@ const Div = styled.div `
     margin-top: 60px;
     font-family: 'Merienda', sans-serif;
     box-sizing: border-box;
-    margin: 120px;
+    
 `
 
 const Search = styled.div `
