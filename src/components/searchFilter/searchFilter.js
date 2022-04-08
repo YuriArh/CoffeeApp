@@ -1,3 +1,5 @@
+import { Component } from 'react';
+
 import styled from "styled-components";
 
 const Div = styled.div `
@@ -58,23 +60,60 @@ const Button = styled.button `
     font-family: 'Merienda', sans-serif;
     font-size: 12px;
 `
-const SearchFilter = () => {
-    return (
-        <Div>
-            <Search>
-                <SearchText>Looking For</SearchText>
-                <SearchInput placeholder={'start typing here...'}></SearchInput>
-            </Search>
-            <Filter>
-                <FilterText>Or filter</FilterText>
-                <ButtonsMenu>
-                    <Button>Brazil</Button>
-                    <Button>Kenya</Button>
-                    <Button>Columbia</Button>
-                </ButtonsMenu>
-            </Filter>
-        </Div>
-    )
+
+
+class SearchFilter extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            buttonsData : [
+                {name: 'Brazil'},
+                {name: 'Kenya'},
+                {name: 'Columbia'},
+            ],
+            term: '',
+        }
+    }
+
+    onUpdateSearch = (e) => {
+        const term = e.target.value;
+        this.setState({term});
+        this.props.onUpdateSearch(term)
+    }
+
+    onFilterSelect = (filter) => {
+        this.state({filter});
+    }
+
+    render() {
+        const buttons = this.state.buttonsData.map(({name}) => {
+            return (
+                <Button 
+                type="button"
+                key={name}
+                onClick={()=> this.props.onFilterSelect(name)}>
+                    {name}
+                </Button>
+            )
+        })
+        return (
+            <Div>
+                <Search>
+                    <SearchText>Looking For</SearchText>
+                    <SearchInput placeholder={'start typing here...'}
+                    value={this.state.term}
+                    onChange={this.onUpdateSearch}></SearchInput>
+                </Search>
+                <Filter>
+                    <FilterText>Or filter</FilterText>
+                    <ButtonsMenu>
+                        {buttons}
+                    </ButtonsMenu>
+                </Filter>
+            </Div>
+        )
+    }
+        
 }
 
 export default SearchFilter 

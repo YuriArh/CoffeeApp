@@ -13,15 +13,21 @@ const Ul = styled.ul `
     grid-row-gap: 60px;
 `
 
-const MarketList = () => {
+const MarketList = ({data}) => {
+    const elements = data.map((item) => {
+        const {id, ...itemProps} = item;
+
+        return (
+            <MarketItem 
+                key= {id} 
+                {...itemProps}
+            />
+        )
+    })
+
     return (
         <Ul>
-            <MarketItem/>
-            <MarketItem/>
-            <MarketItem/>
-            <MarketItem/>
-            <MarketItem/>
-            <MarketItem/>
+            {elements}
         </Ul>
     )
 }

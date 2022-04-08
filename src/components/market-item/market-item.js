@@ -39,14 +39,15 @@ const ItemPrice = styled.p `
     font-weight: 700;
 `
 
-const MarketItem = () => {
+const MarketItem = (props) => {
+    const {name, price, country} = props;
     return (
         <Button>
             <Img src={marketImg}></Img>
             <DivText>
-                <ItemName>AROMISTICO Coffee 1 kg</ItemName>
-                <ItemCountry>Brazil</ItemCountry>
-                <ItemPrice>6.99$</ItemPrice>
+                <ItemName>{name}</ItemName>
+                <ItemCountry>{country}</ItemCountry>
+                <ItemPrice>{price}$</ItemPrice>
             </DivText>
         </Button>
     )
